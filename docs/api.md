@@ -10,3 +10,4 @@
 | GET | `/api/shopfloor/dashboard` | 工程师任务工作台 |
 | POST | `/api/shopfloor/work-orders/{id}/reports` | 提交评审反馈 |
 | POST | `/api/shopfloor/agent-preview` | 运行本地沙箱演示智能体 |
+| POST | `/api/shopfloor/change-risk` | 检查测试、安全、数据库变更与回滚证据并执行质量门禁 |
