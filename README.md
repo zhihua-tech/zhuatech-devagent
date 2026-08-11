@@ -49,3 +49,7 @@ ZhuaTech DevAgent 社区源码版提供仓库目录、Agent 任务、沙箱资�
 | ![知华科技微信二维码一](docs/images/zhuatech-wechat-consulting.png) | ![知华科技微信二维码二](docs/images/zhuatech-wechat-consulting-2.png) |
 
 SEO：研发智能体源码、Coding Agent、软件工程 Agent、代码评审 AI、研发效能平台、Java Vue 开源项目、知华科技。
+
+## 发布恢复能力
+
+新增 `POST /api/devagent/insights/deployment-recovery`，检查灰度发布、自动回滚、数据库可逆性、测试覆盖、错误预算和值守人员，输出 `READY`、`REHEARSE` 或 `BLOCK`。

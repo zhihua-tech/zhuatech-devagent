@@ -1,0 +1,3 @@
+/* Copyright 2026 上海如静知华信息科技有限公司 */
+package cn.zhuatech.devagent;import cn.zhuatech.devagent.service.DeploymentRecoveryService;import org.junit.jupiter.api.Test;import static org.junit.jupiter.api.Assertions.*;
+class DeploymentRecoveryServiceTests{private final DeploymentRecoveryService s=new DeploymentRecoveryService();@Test void blocksIrreversibleRelease(){var r=s.evaluate(new DeploymentRecoveryService.Request("R1",50,false,false,false,10,false));assertEquals("BLOCK",r.status());}@Test void approvesRecoverableRelease(){var r=s.evaluate(new DeploymentRecoveryService.Request("R2",90,true,true,true,80,true));assertEquals("READY",r.status());}}
