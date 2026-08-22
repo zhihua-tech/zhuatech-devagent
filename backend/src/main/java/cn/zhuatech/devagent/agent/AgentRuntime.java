@@ -1,4 +1,4 @@
-/* Copyright 2026 上海如静知华信息科技有限公司 */
+/* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
 package cn.zhuatech.devagent.agent;
 import org.springframework.stereotype.Component; import java.util.List; import java.util.Map;
 /** 研发智能体运行边界；演示任务仅模拟沙箱分支，不操作外部代码仓库。 */
