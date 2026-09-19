@@ -11,9 +11,16 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
-/** 在开发智能体提交变更前计算发布风险并给出门禁结论。 */
+/**
+ * 在开发智能体提交变更前计算发布风险并给出门禁结论。
+ *
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class ChangeRiskService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public RiskResult evaluate(RiskRequest request) {
         int riskScore = Math.min(100,
             Math.min(25, request.changedFiles())
@@ -30,6 +37,9 @@ public class ChangeRiskService {
         return new RiskResult(decision, riskScore, List.copyOf(failedChecks), "PASS".equals(decision) ? "允许创建合并请求" : "补充测试或回滚证据后重新评估");
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record RiskRequest(
         @NotBlank(message = "请输入变更说明") String changeSummary,
         @Positive int changedFiles,
@@ -39,5 +49,8 @@ public class ChangeRiskService {
         boolean rollbackPlan
     ) {}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record RiskResult(String decision, int riskScore, List<String> failedChecks, String nextAction) {}
 }

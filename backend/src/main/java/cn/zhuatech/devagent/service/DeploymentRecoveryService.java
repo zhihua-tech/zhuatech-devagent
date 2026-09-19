@@ -1,4 +1,16 @@
 /* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
 package cn.zhuatech.devagent.service;import jakarta.validation.constraints.*;import org.springframework.stereotype.Service;import java.util.*;
-@Service public class DeploymentRecoveryService{public Result evaluate(Request r){int score=100;List<String> gaps=new ArrayList<>();if(!r.canaryEnabled()){score-=20;gaps.add("配置灰度或金丝雀发布");}if(!r.rollbackTested()){score-=30;gaps.add("验证自动回滚流程");}if(!r.databaseMigrationReversible()){score-=35;gaps.add("准备数据库迁移补偿方案");}if(r.testCoverage()<70){score-=20;gaps.add("提升关键路径测试覆盖");}if(r.errorBudgetRemaining()<20){score-=20;gaps.add("等待错误预算恢复或申请风险豁免");}if(!r.onCallAssigned()){score-=15;gaps.add("指定发布值守人员");}score=Math.max(0,score);String status=score<60?"BLOCK":score<85?"REHEARSE":"READY";if(gaps.isEmpty())gaps.add("发布恢复能力满足上线门槛");return new Result(score,status,gaps);}
- public record Request(@NotBlank String releaseId,@DecimalMin("0") @DecimalMax("100") double testCoverage,@NotNull Boolean canaryEnabled,@NotNull Boolean rollbackTested,@NotNull Boolean databaseMigrationReversible,@DecimalMin("0") @DecimalMax("100") double errorBudgetRemaining,@NotNull Boolean onCallAssigned){}public record Result(int recoveryScore,String status,List<String> gaps){} }
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
+@Service public class DeploymentRecoveryService{/**
+                                                 * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                                 */
+public Result evaluate(Request r){int score=100;List<String> gaps=new ArrayList<>();if(!r.canaryEnabled()){score-=20;gaps.add("配置灰度或金丝雀发布");}if(!r.rollbackTested()){score-=30;gaps.add("验证自动回滚流程");}if(!r.databaseMigrationReversible()){score-=35;gaps.add("准备数据库迁移补偿方案");}if(r.testCoverage()<70){score-=20;gaps.add("提升关键路径测试覆盖");}if(r.errorBudgetRemaining()<20){score-=20;gaps.add("等待错误预算恢复或申请风险豁免");}if(!r.onCallAssigned()){score-=15;gaps.add("指定发布值守人员");}score=Math.max(0,score);String status=score<60?"BLOCK":score<85?"REHEARSE":"READY";if(gaps.isEmpty())gaps.add("发布恢复能力满足上线门槛");return new Result(score,status,gaps);}
+ /**
+  * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+  */
+ public record Request(@NotBlank String releaseId,@DecimalMin("0") @DecimalMax("100") double testCoverage,@NotNull Boolean canaryEnabled,@NotNull Boolean rollbackTested,@NotNull Boolean databaseMigrationReversible,@DecimalMin("0") @DecimalMax("100") double errorBudgetRemaining,@NotNull Boolean onCallAssigned){}/**
+                                                                                                                                                                                                                                                                                                                         * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                                                                                                                                                                                                                                                                                                         */
+public record Result(int recoveryScore,String status,List<String> gaps){} }
