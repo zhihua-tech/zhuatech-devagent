@@ -1,0 +1,66 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "PASS",
+      "uncoveredLines": "#10"
+    },
+    "error": false,
+    "baseline": {
+      "decision": "PASS",
+      "uncoveredLines": "#10"
+    }
+  },
+  {
+    "patch": {
+      "failedTests": "1"
+    },
+    "expected": {
+      "decision": "HOLD"
+    },
+    "error": false,
+    "baseline": {
+      "decision": "PASS",
+      "uncoveredLines": "#10"
+    }
+  },
+  {
+    "patch": {
+      "reviewedFiles": "1"
+    },
+    "expected": {
+      "decision": "HOLD"
+    },
+    "error": false,
+    "baseline": {
+      "decision": "PASS",
+      "uncoveredLines": "#10"
+    }
+  },
+  {
+    "patch": {
+      "coveredLines": "79"
+    },
+    "expected": {
+      "decision": "HOLD"
+    },
+    "error": false,
+    "baseline": {
+      "decision": "PASS",
+      "uncoveredLines": "#10"
+    }
+  },
+  {
+    "patch": {
+      "coveredLines": "80"
+    },
+    "expected": {
+      "decision": "PASS"
+    },
+    "error": false,
+    "baseline": {
+      "decision": "PASS",
+      "uncoveredLines": "#10"
+    }
+  }
+]

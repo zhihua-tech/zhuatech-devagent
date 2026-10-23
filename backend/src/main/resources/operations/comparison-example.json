@@ -1,0 +1,6 @@
+{
+  "patch": {
+    "failedTests": "1"
+  },
+  "description": "失败测试数改为1"
+}
