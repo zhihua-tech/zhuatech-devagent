@@ -1,0 +1,60 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "PASS",
+      "uncoveredLines": "#10"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "failedTests": "1"
+    },
+    "expected": {
+      "decision": "HOLD"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "reviewedFiles": "1"
+    },
+    "expected": {
+      "decision": "HOLD"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "coveredLines": "79"
+    },
+    "expected": {
+      "decision": "HOLD"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "coveredLines": "80"
+    },
+    "expected": {
+      "decision": "PASS"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "coveredLines": "101"
+    },
+    "expected": {},
+    "error": true
+  },
+  {
+    "patch": {
+      "reviewedFiles": "3"
+    },
+    "expected": {},
+    "error": true
+  }
+]
